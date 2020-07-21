@@ -1,13 +1,12 @@
-
-
 // const profileDataArgs = process.argv.slice(2, process.argv.length);
 
 // const [name, github] = profileDataArgs
-const fs = require('fs');
 
 const generatePage = require('./src/page-template');
 
 const inquirer = require('inquirer');
+
+const { writeFile, copyFile } = require('./utils/generate-site.js');
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -155,3 +154,4 @@ promptUser()
   .catch(err => {
     console.log(err);
   });
+
